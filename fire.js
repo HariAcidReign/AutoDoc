@@ -76,6 +76,10 @@ if (!user) {
 	get uid() {
 		return (firebase.auth().currentUser || {}).uid;
 	}
+	
+	signOut: () => {
+  		return firebase.auth().signOut()
+}
 }
 
 export default new Fire();
