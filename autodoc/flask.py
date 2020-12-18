@@ -8,14 +8,14 @@ def entityfinder():
 
 nlp = spacy.load('en_core_web_sm') 
 
-sentence = "apple is looking at buying U.K. startup for $1 billion"//
+#sentence = "apple is looking at buying U.K. startup for $1 billion"# //
 
-response = requests.get(url, data={payload: sentence}) 
+response = requests.get(url, data={payload: sentence}) // We need get sentense as payload from app 
 
 
 doc = nlp(sentence) 
 
-return jsonify(doc)
+return jsonify(doc) // 
     
   
 
