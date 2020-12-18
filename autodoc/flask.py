@@ -15,9 +15,7 @@ response = requests.get(url, data={payload: sentence})
 
 doc = nlp(sentence) 
 
-for ent in doc.ents: 
-
-    jsonify(ent.text, ent.start_char, ent.end_char, ent.label_)  /// we need to handle post request from here to our app
+return jsonify(doc)
     
   
 
