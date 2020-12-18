@@ -1,8 +1,6 @@
 import spacy 
 import resquest
-from flask import Flask, render_template, request, redirect, flash, send_from_directory
-import jsonify
-
+from flask import Flask, render_template, request, redirect, flash, send_from_directory, jsonify
 
 @app.route('/')
 def entityfinder():
@@ -19,7 +17,7 @@ doc = nlp(sentence)
 
 for ent in doc.ents: 
 
-    jsonify(ent.text, ent.start_char, ent.end_char, ent.label_)  ///
+    jsonify(ent.text, ent.start_char, ent.end_char, ent.label_)  /// not completed
   
 
 if __name__ == "__main__":
