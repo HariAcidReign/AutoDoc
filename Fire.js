@@ -1,8 +1,4 @@
 import firebase from 'firebase';
-import '@react-native-firebase/firestore';
-
-const app = firebase.app();
-export const db = app.firestore(); 
 
 class Fire {
 	constructor() {
@@ -26,14 +22,14 @@ class Fire {
 		}
 	};
 
-	checkAuth = () => {
-		firebase.auth().onAuthStateChanged((user) => {
-			if (!user) {
-				// firebase.auth().signInAnonymously();
-				firebase.auth().signInWithEmailAndPassword(user.email, user.password);
-			}
-		});
-	};
+	// checkAuth = () => {
+	// 	firebase.auth().onAuthStateChanged((user) => {
+	// 		if (!user) {
+	// 			// firebase.auth().signInAnonymously();
+	// 			firebase.auth().signInWithEmailAndPassword(user.email, user.password);
+	// 		}
+	// 	});
+	// };
 
 	get = (callback) => {
 		this.db.on('child_added', (snapshot) => callback(this.parse(snapshot)));
@@ -44,15 +40,12 @@ class Fire {
 	}
 
 	get db() {
-		return firebase.database().ref('messages');  
+		return firebase.database().ref('messages');
 	}
 
 	get uid() {
 		return (firebase.auth().currentUser || {}).uid;
 	}
-
-	get signOut(){
-		return firebase.auth().signOut();
 }
 
 export default new Fire();

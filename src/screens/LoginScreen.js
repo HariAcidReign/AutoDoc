@@ -99,10 +99,14 @@ export default class LoginScreen extends Component {
 									style={styles.continue}
 									onPress={this.handleLogin}>
 									<Ionicons
+										name="arrow-forward-outline"
+										size={30}
+										color="#FFF"></Ionicons>
+									{/* <Ionicons
 										name="md-arrow-round-forward"
 										size={24}
 										color="#FFF"
-									/>
+									/> */}
 								</TouchableOpacity>
 							</View>
 						</View>

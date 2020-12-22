@@ -53,10 +53,12 @@ export default class Home extends React.Component {
 						paddingHorizontal: 320,
 					}}>
 					<Neumorph size={50}>
-						<Ionicons
-							name="person-circle-outline"
-							size={40}
-							color={gray}></Ionicons>
+						<TouchableOpacity>
+							<Ionicons
+								name="person-circle-outline"
+								size={40}
+								color={gray}></Ionicons>
+						</TouchableOpacity>
 					</Neumorph>
 				</View>
 				<View style={{ paddingHorizontal: 90, marginTop: 15 }}>
@@ -74,50 +76,54 @@ export default class Home extends React.Component {
 					<TextInput
 						style={styles.input}
 						placeholder="Name"
-						placeholderTextColor="#522289"
+						placeholderTextColor="#6C7A93"
 					/>
 				</View>
 				<View style={{ marginHorizontal: 32 }}>
 					<TextInput
 						style={styles.input}
 						placeholder="Age"
-						placeholderTextColor="#522289"
+						placeholderTextColor="#6C7A93"
 					/>
 				</View>
 				<View style={{ marginHorizontal: 32 }}>
 					<TextInput
 						style={styles.input}
 						placeholder="Gender"
-						placeholderTextColor="#522289"
+						placeholderTextColor="#6C7A93"
 					/>
 				</View>
 				<View style={{ marginHorizontal: 32 }}>
 					<TextInput
 						style={styles.input}
 						placeholder="Symptoms"
-						placeholderTextColor="#522289"
+						placeholderTextColor="#6C7A93"
 					/>
 				</View>
 				<View style={{ marginHorizontal: 32 }}>
 					<TextInput
 						style={styles.input}
 						placeholder="Diagnosis"
-						placeholderTextColor="#522289"
+						placeholderTextColor="#6C7A93"
 					/>
 				</View>
 				<View style={{ marginHorizontal: 32 }}>
 					<TextInput
 						style={styles.input}
 						placeholder="Medications"
-						placeholderTextColor="#522289"
+						placeholderTextColor="#6C7A93"
 					/>
 				</View>
 				<View style={styles.bottomContainer}>
 					<Neumorph size={60}>
-						<Ionicons name="mic-outline" size={30} color={gray}></Ionicons>
+						<TouchableOpacity>
+							<Ionicons name="mic-outline" size={30} color={gray}></Ionicons>
+						</TouchableOpacity>
 					</Neumorph>
 					<Neumorph size={60}>
-						<Ionicons name="logo-whatsapp" size={30} color={gray}></Ionicons>
+						<TouchableOpacity>
+							<Ionicons name="logo-whatsapp" size={30} color={gray}></Ionicons>
+						</TouchableOpacity>
 					</Neumorph>
 				</View>
 			</ImageBackground>
