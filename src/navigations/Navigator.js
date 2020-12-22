@@ -1,7 +1,7 @@
 import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
 import Home from '../screens/Home';
-import Detail from '../screens/Detail';
+import Profile from '../screens/Profile';
 import LoginScreen from '../screens/LoginScreen';
 
 const stackNavigatorOptions = {
@@ -11,11 +11,12 @@ const stackNavigatorOptions = {
 const AppNavigator = createStackNavigator(
 	{
 		Home: { screen: Home },
-		Detail: { screen: Detail },
+		Profile: { screen: Profile },
 		Login: { screen: LoginScreen },
 	},
 	{
 		defaultNavigationOptions: stackNavigatorOptions,
+		initialRouteName: 'Login',
 	}
 );
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-export default class Detail extends React.Component {
+export default class Profile extends React.Component {
 	render() {
 		return (
 			<View>
