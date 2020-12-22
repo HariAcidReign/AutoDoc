@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "54472305059",
+    "firebase_url": "https://chatmodule-app.firebaseio.com",
+    "project_id": "chatmodule-app",
+    "storage_bucket": "chatmodule-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:54472305059:android:4dcacb085a8ff5d64ad216",
+        "android_client_info": {
+          "package_name": "com.reignSg.AutoDoc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "54472305059-3pan59q72jdcd814boj9sh4s7mf07mm7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZC0MzotbNQNk1aB2iBmZol6HAW4KRaLQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "54472305059-3pan59q72jdcd814boj9sh4s7mf07mm7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
