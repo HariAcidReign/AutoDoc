@@ -11,6 +11,7 @@ import {
 	Button,
 	SafeAreaView,
 	Keyboard,
+	StatusBar,
 } from 'react-native';
 
 import { AntDesign, Entypo, Ionicons } from '@expo/vector-icons';
@@ -21,22 +22,24 @@ export default class Home extends React.Component {
 	render() {
 		const Neumorph = ({ children, size, style }) => {
 			return (
-				<View style={styles.topShadow}>
-					<View style={styles.bottomShadow}>
-						<View
-							style={[
-								styles.inner,
-								{
-									width: size || 40,
-									height: size || 40,
-									borderRadius: size / 2 || 40 / 2,
-								},
-								style,
-							]}>
-							{children}
+				<SafeAreaView>
+					<View style={styles.topShadow}>
+						<View style={styles.bottomShadow}>
+							<View
+								style={[
+									styles.inner,
+									{
+										width: size || 40,
+										height: size || 40,
+										borderRadius: size / 2 || 40 / 2,
+									},
+									style,
+								]}>
+								{children}
+							</View>
 						</View>
 					</View>
-				</View>
+				</SafeAreaView>
 			);
 		};
 
@@ -44,16 +47,16 @@ export default class Home extends React.Component {
 			<ImageBackground
 				source={require('../images/back-img.png')}
 				style={{ width: '100%', height: '100%' }}>
-				{/* Use React Natigation package to navigate from this page to Doc Profile page. */}
 				<View
 					style={{
 						flexDirection: 'row',
-						marginTop: 40,
+						marginTop: 30,
 						alignItems: 'center',
-						paddingHorizontal: 320,
+						paddingHorizontal: 340,
 					}}>
 					<Neumorph size={50}>
-						<TouchableOpacity>
+						<TouchableOpacity
+							onPress={() => this.props.navigation.navigate('Profile')}>
 							<Ionicons
 								name="person-circle-outline"
 								size={40}
@@ -61,7 +64,7 @@ export default class Home extends React.Component {
 						</TouchableOpacity>
 					</Neumorph>
 				</View>
-				<View style={{ paddingHorizontal: 90, marginTop: 15 }}>
+				<View style={{ paddingHorizontal: 90, marginTop: 2 }}>
 					<Text
 						style={{
 							fontSize: 35,
@@ -170,7 +173,7 @@ const styles = StyleSheet.create({
 		shadowColor: '#B7C4DD',
 	},
 	bottomContainer: {
-		marginTop: 5,
+		marginTop: 20,
 		flexDirection: 'row',
 		justifyContent: 'space-around',
 	},

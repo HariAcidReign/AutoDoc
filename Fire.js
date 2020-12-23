@@ -46,6 +46,7 @@ class Fire {
 	get uid() {
 		return (firebase.auth().currentUser || {}).uid;
 	}
+	
 }
 
 export default new Fire();
