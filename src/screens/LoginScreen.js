@@ -47,12 +47,12 @@ export default class LoginScreen extends Component {
 					scrollEnabled={true}>
 					<View>
 						<View style={styles.circle} />
-						{/* <View style={{ marginTop: 64 }}>
+						<View style={{ marginTop: 30 }}>
 							<Image
-								source={require('../assets/message.png')}
-								style={{ width: 100, height: 100, alignSelf: 'center' }}
+								source={require('../images/message.png')}
+								style={{ width: 50, height: 50, alignSelf: 'center' }}
 							/>
-						</View> */}
+						</View>
 
 						<View style={{ marginHorizontal: 160 }}>
 							<Text style={styles.header}>Login</Text>

@@ -39,10 +39,6 @@ class Fire {
 		this.db.off();
 	}
 
-	get db() {
-		return firebase.database().ref('messages');
-	}
-
 	get uid() {
 		return (firebase.auth().currentUser || {}).uid;
 	}

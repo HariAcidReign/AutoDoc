@@ -14,12 +14,132 @@ import {
 	StatusBar,
 } from 'react-native';
 
-import { AntDesign, Entypo, Ionicons } from '@expo/vector-icons';
+import { Audio } from 'expo-av';
+import * as Permissions from 'expo-permissions';
+import * as FileSystem from 'expo-file-system';
 
+import { AntDesign, Entypo, Ionicons } from '@expo/vector-icons';
 const gray = '#91A1BD';
 
+const recordingOptions = {
+	// android not currently in use. Not getting results from speech to text with .m4a
+	// but parameters are required
+	android: {
+		extension: '.m4a',
+		outputFormat: Audio.RECORDING_OPTION_ANDROID_OUTPUT_FORMAT_MPEG_4,
+		audioEncoder: Audio.RECORDING_OPTION_ANDROID_AUDIO_ENCODER_AAC,
+		sampleRate: 44100,
+		numberOfChannels: 2,
+		bitRate: 128000,
+	},
+	ios: {
+		extension: '.wav',
+		audioQuality: Audio.RECORDING_OPTION_IOS_AUDIO_QUALITY_HIGH,
+		sampleRate: 44100,
+		numberOfChannels: 1,
+		bitRate: 128000,
+		linearPCMBitDepth: 16,
+		linearPCMIsBigEndian: false,
+		linearPCMIsFloat: false,
+	},
+};
 export default class Home extends React.Component {
+	constructor(props) {
+		super(props);
+		this.recording = null;
+		this.state = {
+			isFetching: false,
+			isRecording: false,
+			transcript: '',
+		};
+	}
+
+	deleteRecordingFile = async () => {
+		try {
+			const info = await FileSystem.getInfoAsync(this.recording.getURI());
+			await FileSystem.deleteAsync(info.uri);
+		} catch (error) {
+			console.log('There was an error deleting recorded file', error);
+		}
+	};
+
+	getTranscription = async () => {
+		this.setState({ isFetching: true });
+		try {
+			const { uri } = await FileSystem.getInfoAsync(this.recording.getURI());
+
+			const formData = new FormData();
+			formData.append('file', {
+				uri,
+				type: Platform.OS === 'ios' ? 'audio/x-wav' : 'audio/m4a',
+				name: Platform.OS === 'ios' ? `${Date.now()}.wav` : `${Date.now()}.m4a`,
+			});
+
+			const { data } = await axios.post(
+				'https://testvoci.herokuapp.com/speech',
+				formData,
+				{
+					headers: {
+						'Content-Type': 'multipart/form-data',
+					},
+				}
+			);
+
+			this.setState({ transcript: data.transcript });
+		} catch (error) {
+			console.log('There was an error reading file', error);
+			this.stopRecording();
+			this.resetRecording();
+		}
+		this.setState({ isFetching: false });
+	};
+
+	startRecording = async () => {
+		const { status } = await Permissions.askAsync(Permissions.AUDIO_RECORDING);
+		if (status !== 'granted') return;
+
+		this.setState({ isRecording: true });
+		await Audio.setAudioModeAsync({
+			allowsRecordingIOS: true,
+			interruptionModeIOS: Audio.INTERRUPTION_MODE_IOS_DO_NOT_MIX,
+			playsInSilentModeIOS: true,
+			interruptionModeAndroid: Audio.INTERRUPTION_MODE_ANDROID_DO_NOT_MIX,
+			playThroughEarpieceAndroid: true,
+		});
+		const recording = new Audio.Recording();
+
+		try {
+			await recording.prepareToRecordAsync(recordingOptions);
+			await recording.startAsync();
+		} catch (error) {
+			console.log(error);
+			this.stopRecording();
+		}
+
+		this.recording = recording;
+	};
+
+	stopRecording = async () => {
+		this.setState({ isRecording: false });
+		try {
+			await this.recording.stopAndUnloadAsync();
+		} catch (error) {
+			// Do nothing -- we are already unloaded.
+		}
+	};
+
+	resetRecording = () => {
+		this.deleteRecordingFile();
+		this.recording = null;
+	};
+
+	handleOnPressOut = () => {
+		this.stopRecording();
+		this.getTranscription();
+	};
+
 	render() {
+		const { isRecording, transcript, isFetching } = this.state;
 		const Neumorph = ({ children, size, style }) => {
 			return (
 				<SafeAreaView>
@@ -119,7 +239,10 @@ export default class Home extends React.Component {
 				</View>
 				<View style={styles.bottomContainer}>
 					<Neumorph size={60}>
-						<TouchableOpacity>
+						<TouchableOpacity
+							onPressIn={this.startRecording}
+							onPressOut={this.handleOnPressOut}>
+							{/* When onPressIn change of button. Press button again to stop rec and change color back */}
 							<Ionicons name="mic-outline" size={30} color={gray}></Ionicons>
 						</TouchableOpacity>
 					</Neumorph>

@@ -24,6 +24,7 @@ export default class Profile extends React.Component {
 		try {
 			await firebase.auth().signOut();
 			this.props.navigation.navigate('Login');
+			console.log('Done logging out');
 		} catch (e) {
 			console.log(e);
 		}
