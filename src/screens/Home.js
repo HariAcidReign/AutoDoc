@@ -13,7 +13,7 @@ import {
 	Keyboard,
 	StatusBar,
 } from 'react-native';
-
+import axios from 'axios';
 import { Audio } from 'expo-av';
 import * as Permissions from 'expo-permissions';
 import * as FileSystem from 'expo-file-system';
@@ -76,7 +76,7 @@ export default class Home extends React.Component {
 			});
 
 			const { data } = await axios.post(
-				'https://testvoci.herokuapp.com/speech',
+				'https://brawny-unique-cress.glitch.me/speech',
 				formData,
 				{
 					headers: {
@@ -199,6 +199,7 @@ export default class Home extends React.Component {
 					<TextInput
 						style={styles.input}
 						placeholder="Name"
+						value={this.state.transcript}
 						placeholderTextColor="#6C7A93"
 					/>
 				</View>

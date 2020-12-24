@@ -16,7 +16,7 @@ const AppNavigator = createStackNavigator(
 	},
 	{
 		defaultNavigationOptions: stackNavigatorOptions,
-		initialRouteName: 'Home', // CHANGE THIS AFTER DEVELOPMENT OF THIS PAGE
+		initialRouteName: 'Login', // CHANGE THIS AFTER DEVELOPMENT OF THIS PAGE
 	}
 );
 
