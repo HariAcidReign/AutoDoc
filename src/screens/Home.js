@@ -76,7 +76,7 @@ export default class Home extends React.Component {
 			});
 
 			const { data } = await axios.post(
-				'https://brawny-unique-cress.glitch.me/speech',
+				'https://autodoctest.herokuapp.com/',
 				formData,
 				{
 					headers: {

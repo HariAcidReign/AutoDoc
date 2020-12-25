@@ -29,6 +29,18 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "hooks": {
+      "postPublish": [
+        {
+          "file": "sentry-expo/upload-sourcemaps",
+          "config": {
+            "organization": "HariHaran",
+            "project": "your sentry project's name here",
+            "authToken": "your auth token here"
+          }
+        }
+      ]
     }
   }
 }
