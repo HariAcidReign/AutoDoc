@@ -52,6 +52,12 @@ export default class Home extends React.Component {
 			isFetching: false,
 			isRecording: false,
 			transcript: '',
+			pname: '',
+			age: '',
+			mobile: '',
+			symptoms: '',
+			diagnosis: '',
+			medication: '',
 		};
 	}
 
@@ -139,6 +145,24 @@ export default class Home extends React.Component {
 		this.getTranscription();
 	};
 
+	sendsms = async () => {
+		const { result } = await SMS.sendSMSAsync(
+			['+91 9489768715', this.state.mobile],
+			'We Care Hospitals                    	' +
+				'The patient ' +
+				this.state.pname +
+				', ' +
+				this.state.age +
+				' has symptoms of ' +
+				this.state.symptoms +
+				' and is diagnosed with ' +
+				this.state.diagnosis +
+				', and has been advised to take ' +
+				this.state.medication +
+				' by Dr. Hariharan, MD'
+		);
+	};
+
 	render() {
 		const { isRecording, transcript, isFetching } = this.state;
 		const Neumorph = ({ children, size, style }) => {
@@ -200,7 +224,10 @@ export default class Home extends React.Component {
 					<TextInput
 						style={styles.input}
 						placeholder="Name"
-						value={this.state.transcript}
+						onChangeText={(pname) => {
+							this.setState({ pname });
+						}}
+						value={this.state.pname}
 						placeholderTextColor="#6C7A93"
 					/>
 				</View>
@@ -208,13 +235,21 @@ export default class Home extends React.Component {
 					<TextInput
 						style={styles.input}
 						placeholder="Age"
+						onChangeText={(age) => {
+							this.setState({ age });
+						}}
+						value={this.state.age}
 						placeholderTextColor="#6C7A93"
 					/>
 				</View>
 				<View style={{ marginHorizontal: 32 }}>
 					<TextInput
 						style={styles.input}
-						placeholder="Gender"
+						placeholder="Mobile Number"
+						onChangeText={(mobile) => {
+							this.setState({ mobile });
+						}}
+						value={this.state.mobile}
 						placeholderTextColor="#6C7A93"
 					/>
 				</View>
@@ -222,6 +257,10 @@ export default class Home extends React.Component {
 					<TextInput
 						style={styles.input}
 						placeholder="Symptoms"
+						onChangeText={(symptoms) => {
+							this.setState({ symptoms });
+						}}
+						value={this.state.symptoms}
 						placeholderTextColor="#6C7A93"
 					/>
 				</View>
@@ -229,6 +268,10 @@ export default class Home extends React.Component {
 					<TextInput
 						style={styles.input}
 						placeholder="Diagnosis"
+						onChangeText={(diagnosis) => {
+							this.setState({ diagnosis });
+						}}
+						value={this.state.diagnosis}
 						placeholderTextColor="#6C7A93"
 					/>
 				</View>
@@ -236,6 +279,10 @@ export default class Home extends React.Component {
 					<TextInput
 						style={styles.input}
 						placeholder="Medications"
+						onChangeText={(medication) => {
+							this.setState({ medication });
+						}}
+						value={this.state.medication}
 						placeholderTextColor="#6C7A93"
 					/>
 				</View>
@@ -249,7 +296,7 @@ export default class Home extends React.Component {
 						</TouchableOpacity>
 					</Neumorph>
 					<Neumorph size={60}>
-						<TouchableOpacity>
+						<TouchableOpacity onPressIn={this.sendsms}>
 							<Ionicons name="logo-whatsapp" size={30} color={gray}></Ionicons>
 						</TouchableOpacity>
 					</Neumorph>

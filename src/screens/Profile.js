@@ -77,7 +77,7 @@ export default class Profile extends React.Component {
 							Doctor Details
 						</Text>
 						<Text style={[styles.text, { fontWeight: '300', fontSize: 30 }]}>
-							Dr. Mark Lee
+							Dr. Hariharan
 						</Text>
 						<Text style={[styles.text, { fontWeight: '200', fontSize: 25 }]}>
 							We Care Hospitals
