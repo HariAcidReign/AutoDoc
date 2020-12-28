@@ -3206,6 +3206,11 @@ expo-secure-store@~9.3.0:
   resolved "https://registry.yarnpkg.com/expo-secure-store/-/expo-secure-store-9.3.0.tgz#b716d5d115cc50a34037d1afef84fe4b8ea0745c"
   integrity sha512-dNhKcoUUn+1kmEfFVxSU7h+YsqODqlExZQJcQgxgeiuCeeDvJWkE10t3jjrO6aNfrdM5i/X2l3oh401EDslWsQ==
 
+expo-sms@~8.4.0:
+  version "8.4.0"
+  resolved "https://registry.yarnpkg.com/expo-sms/-/expo-sms-8.4.0.tgz#11c0dede09a10ffebb83a5f669996ef5ac724a13"
+  integrity sha512-x6dItNvvGtPx+PelHV9NQItUr3R6ThXBdJIrZB+FMxPmziqCyDqEqc85Xxdy18xOryX+0ArUdP4PzzHRzLq6CA==
+
 expo-sqlite@~8.5.0:
   version "8.5.0"
   resolved "https://registry.yarnpkg.com/expo-sqlite/-/expo-sqlite-8.5.0.tgz#236b87b72b6855a01db8869514dfa2da3da563ac"

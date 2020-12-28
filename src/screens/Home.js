@@ -15,6 +15,7 @@ import {
 } from 'react-native';
 import axios from 'axios';
 import { Audio } from 'expo-av';
+import * as SMS from 'expo-sms';
 import * as Permissions from 'expo-permissions';
 import * as FileSystem from 'expo-file-system';
 
