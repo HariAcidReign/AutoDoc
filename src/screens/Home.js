@@ -18,6 +18,9 @@ import { Audio } from 'expo-av';
 import * as SMS from 'expo-sms';
 import * as Permissions from 'expo-permissions';
 import * as FileSystem from 'expo-file-system';
+import * as Print from 'expo-print';
+import * as MediaLibrary from 'expo-media-library';
+import * as Sharing from 'expo-sharing';
 
 import { AntDesign, Entypo, Ionicons } from '@expo/vector-icons';
 const gray = '#91A1BD';
@@ -51,7 +54,9 @@ export default class Home extends React.Component {
 		this.state = {
 			isFetching: false,
 			isRecording: false,
-			transcript: '',
+			// transcript: '',
+			query: '',
+			setQuery: '',
 			pname: '',
 			age: '',
 			mobile: '',
@@ -60,6 +65,56 @@ export default class Home extends React.Component {
 			medication: '',
 		};
 	}
+
+	htmlContent = `
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pdf Content</title>
+        <style>
+            body {
+                font-size: 16px;
+                color: rgb(255, 196, 0);
+            }
+            h1 {
+                text-align: center;
+			}
+			@page { margin: 20px; }
+        </style>
+    </head>
+    <body>
+		<h1>Doctor Prescription</h1>
+		<p> This is just a sample prescription template. Project is yet to be completed. </p>
+    </body>
+    </html>
+	`;
+
+	createPDF = async (htmlContent) => {
+		try {
+			const { uri } = await Print.printToFileAsync({ htmlContent });
+			return uri;
+		} catch (err) {
+			console.error(err);
+		}
+	};
+
+	createAndSavePDF = async (htmlContent) => {
+		try {
+			const { uri } = await Print.printToFileAsync({ htmlContent });
+			if (Platform.OS === 'ios') {
+				await Sharing.shareAsync(uri);
+			} else {
+				const permission = await MediaLibrary.requestPermissionsAsync();
+				if (permission.granted) {
+					await MediaLibrary.createAssetAsync(uri);
+				}
+			}
+		} catch (error) {
+			console.error(error);
+		}
+	};
 
 	deleteRecordingFile = async () => {
 		try {
@@ -73,30 +128,29 @@ export default class Home extends React.Component {
 	getTranscription = async () => {
 		this.setState({ isFetching: true });
 		try {
-			const { uri } = await FileSystem.getInfoAsync(this.recording.getURI());
-
+			const info = await FileSystem.getInfoAsync(this.recording.getURI());
+			console.log(`FILE INFO: ${JSON.stringify(info)}`);
+			const uri = info.uri;
 			const formData = new FormData();
 			formData.append('file', {
 				uri,
-				type: Platform.OS === 'ios' ? 'audio/x-wav' : 'audio/m4a',
-				name: Platform.OS === 'ios' ? `${Date.now()}.wav` : `${Date.now()}.m4a`,
+				type: 'audio/x-wav',
+				// could be anything
+				name: 'speech2text',
 			});
+			const response = await fetch('https://autodoctest.herokuapp.com/', {
+				method: 'POST',
+				body: formData,
+			});
+			const data = await response.json();
 
-			const { data } = await axios.post(
-				'https://autodoctest.herokuapp.com/',
-				formData,
-				{
-					headers: {
-						'Content-Type': 'multipart/form-data',
-					},
-				}
-			);
-
-			this.setState({ transcript: data.transcript });
+			console.log(data);
+			this.setState({ pname: data.transcript });
+			// setQuery(data.transcript);
 		} catch (error) {
-			console.log('There was an error reading file', error);
+			console.log('There was an error', error);
 			this.stopRecording();
-			this.resetRecording();
+			//this.resetRecording();
 		}
 		this.setState({ isFetching: false });
 	};
@@ -144,6 +198,10 @@ export default class Home extends React.Component {
 		this.stopRecording();
 		this.getTranscription();
 	};
+
+	// handleQueryChange = (query) => {
+	// 	setQuery(query);
+	// };
 
 	sendsms = async () => {
 		const { result } = await SMS.sendSMSAsync(
@@ -225,9 +283,11 @@ export default class Home extends React.Component {
 						style={styles.input}
 						placeholder="Name"
 						onChangeText={(pname) => {
+							//onChangeText has been changed to onCHange
 							this.setState({ pname });
 						}}
 						value={this.state.pname}
+						//onChange={this.handleQueryChange}
 						placeholderTextColor="#6C7A93"
 					/>
 				</View>
@@ -297,6 +357,14 @@ export default class Home extends React.Component {
 					</Neumorph>
 					<Neumorph size={60}>
 						<TouchableOpacity onPressIn={this.sendsms}>
+							<Ionicons
+								name="chatbubble-ellipses-outline"
+								size={30}
+								color={gray}></Ionicons>
+						</TouchableOpacity>
+					</Neumorph>
+					<Neumorph size={60}>
+						<TouchableOpacity onPressIn={this.createAndSavePDF}>
 							<Ionicons name="logo-whatsapp" size={30} color={gray}></Ionicons>
 						</TouchableOpacity>
 					</Neumorph>
