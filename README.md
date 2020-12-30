@@ -12,12 +12,12 @@ AutoDoc is a React Native + Expo app created for making doctor prescriptions eas
 ## 📷 Screenshots (zoom in to see better) 
 
 <p float="left">
-  <img src="https://user-images.githubusercontent.com/58134096/103357459-41f70b00-4ad9-11eb-9cc3-e5aa75703731.png" width="150" height="250" />
-  <img src="https://user-images.githubusercontent.com/58134096/103359259-9d2afc80-4add-11eb-8181-6176fdd6c265.png" width="150" height="250" />
-  <img src="https://user-images.githubusercontent.com/58134096/103359329-b764da80-4add-11eb-873b-f00a800212c3.png" width="150" height="250" />
-   <img src="https://user-images.githubusercontent.com/58134096/103359359-c8155080-4add-11eb-8597-16e687a9a9bc.png" width="150" height="250" />
-  <img src="https://user-images.githubusercontent.com/58134096/103359389-d82d3000-4add-11eb-86ea-4b657ab1e485.png" width="150" height="250" />
-  <img src="https://user-images.githubusercontent.com/58134096/103359421-e8dda600-4add-11eb-8495-4c990fb616e0.png" width="150" height="250" />
+  <img src="https://user-images.githubusercontent.com/58134096/103357459-41f70b00-4ad9-11eb-9cc3-e5aa75703731.png" width="200" height="300" />
+  <img src="https://user-images.githubusercontent.com/58134096/103359259-9d2afc80-4add-11eb-8181-6176fdd6c265.png" width="200" height="300" />
+  <img src="https://user-images.githubusercontent.com/58134096/103359329-b764da80-4add-11eb-873b-f00a800212c3.png" width="200" height="300" />
+   <img src="https://user-images.githubusercontent.com/58134096/103359359-c8155080-4add-11eb-8597-16e687a9a9bc.png" width="200" height="300" />
+  <img src="https://user-images.githubusercontent.com/58134096/103359389-d82d3000-4add-11eb-86ea-4b657ab1e485.png" width="200" height="300" />
+  <img src="https://user-images.githubusercontent.com/58134096/103359421-e8dda600-4add-11eb-8495-4c990fb616e0.png" width="200" height="300" />
 </p>
 
 ## 🎯 Purpose of the Project
