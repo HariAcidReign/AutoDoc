@@ -1,4 +1,3 @@
-# AutoDoc 👨‍⚕️
 <p align="center">
   <a href="https://github.com/HariAcidReign/AutoDoc">
     <img src="https://user-images.githubusercontent.com/58134096/103359731-6bfefc00-4ade-11eb-918f-6fe8896f9f54.png" alt="Logo" width="300" height="150">
