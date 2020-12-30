@@ -8,7 +8,7 @@
 
 - AutoDoc is a React Native + Expo app created for making doctor prescriptions easier.  
 - The authentication is done using Firebase. Input to the prescription form is given via Voice (**still in beta.** Expo doesn't provide native support for Speech to Text, so the workaround was to host Google Speech-to-Text API on Heroku and then get voice input and send it as a POST request to the cloud. We get back the transcribed text). Input can be given using Keyboard too. 
-   <img src="https://user-images.githubusercontent.com/58134096/103369129-580fc600-4aef-11eb-9e1e-4a8679bf5719.png" width="1000" height="250" />
+   <img src="https://user-images.githubusercontent.com/58134096/103369129-580fc600-4aef-11eb-9e1e-4a8679bf5719.png" width="1000" height="150" />
 
 - The form values are extracted and converted into SMS text or PDF using Expo-SMS and Expo-Print respectively, which can be shared to the Patient's mobile directly.
 
