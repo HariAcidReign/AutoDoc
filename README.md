@@ -1,11 +1,24 @@
 # AutoDoc 👨‍⚕️
-
-Add logo here center
-
+<p align="center">
+  <a href="https://github.com/HariAcidReign/AutoDoc">
+    <img src="https://user-images.githubusercontent.com/58134096/103359731-6bfefc00-4ade-11eb-918f-6fe8896f9f54.png" alt="Logo" width="300" height="150">
+  </a>
+ 
 ## 📌 Introduction 
 
 AutoDoc is a React Native + Expo app created for making doctor prescriptions easier.  
- The authentication is done using Firebase. Input to the prescription form is given via Voice (**still in beta.** Expo doesn't provide native support for Speech to Text, so the workaround was to host Google Speech-to-Text API on Heroku and then get voice input and send it as a POST request to the cloud. We get back the transcribed text). Input can be given using Keyboard too. The form values are extracted and converted into SMS text or PDF using Expo-SMS and Expo-Print respectively, which can be shared to the Patient's mobile directly. 
+ The authentication is done using Firebase. Input to the prescription form is given via Voice (**still in beta.** Expo doesn't provide native support for Speech to Text, so the workaround was to host Google Speech-to-Text API on Heroku and then get voice input and send it as a POST request to the cloud. We get back the transcribed text). Input can be given using Keyboard too. The form values are extracted and converted into SMS text or PDF using Expo-SMS and Expo-Print respectively, which can be shared to the Patient's mobile directly.
+
+## 📷 Screenshots (zoom in to see better) 
+
+<p float="left">
+  <img src="https://user-images.githubusercontent.com/58134096/103357459-41f70b00-4ad9-11eb-9cc3-e5aa75703731.png" width="150" height="250" />
+  <img src="https://user-images.githubusercontent.com/58134096/103359259-9d2afc80-4add-11eb-8181-6176fdd6c265.png" width="150" height="250" />
+  <img src="https://user-images.githubusercontent.com/58134096/103359329-b764da80-4add-11eb-873b-f00a800212c3.png" width="150" height="250" />
+   <img src="https://user-images.githubusercontent.com/58134096/103359359-c8155080-4add-11eb-8597-16e687a9a9bc.png" width="150" height="250" />
+  <img src="https://user-images.githubusercontent.com/58134096/103359389-d82d3000-4add-11eb-86ea-4b657ab1e485.png" width="150" height="250" />
+  <img src="https://user-images.githubusercontent.com/58134096/103359421-e8dda600-4add-11eb-8495-4c990fb616e0.png" width="150" height="250" />
+</p>
 
 ## 🎯 Purpose of the Project
 
@@ -13,7 +26,7 @@ We are all aware of the poor handwriting that is present in most Doctor Prescrip
 
 ## 💻 Meet the makers
 
-Created with 💖 by Hariharan, along with invaluable help from Harish
+Created with 💖 by Hariharan, along with invaluable help from <a href="https://github.com/harishsg99">Harish</a>
 
 
 
