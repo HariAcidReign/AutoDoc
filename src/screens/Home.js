@@ -12,6 +12,7 @@ import {
 	SafeAreaView,
 	Keyboard,
 	StatusBar,
+	TouchableHighlight,
 } from 'react-native';
 import axios from 'axios';
 import { Audio } from 'expo-av';

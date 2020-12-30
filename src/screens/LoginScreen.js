@@ -20,9 +20,9 @@ import Fire from '../../Fire';
 export default class LoginScreen extends Component {
 	state = {
 		//remove these in production. This is just to not type again and again while in expo
-		name: 'Dr.Hariharan',
-		email: 'test@gmail.com',
-		password: 'password',
+		name: '',
+		email: '',
+		password: '',
 		errorMessage: null,
 	};
 
