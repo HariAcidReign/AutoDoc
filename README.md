@@ -39,7 +39,7 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 **Known Issues**
 - Make voice input work for all elements of form
 - Fix expo-app-loading bug
-- As the app is an MVP, the PDF details are hardcoded. Change it to dynamically get details from Home Screen and print in HTML template using EJS. 
+- Fix blank space bug in PDF rendering
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
