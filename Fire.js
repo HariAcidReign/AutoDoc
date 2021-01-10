@@ -3,12 +3,10 @@ import firebase from 'firebase';
 class Fire {
 	constructor() {
 		this.init();
-		// this.checkAuth();
 	}
 
 	init = () => {
 		if (!firebase.apps.length) {
-			// this is anonymous authentication. Add OAuth
 			firebase.initializeApp({
 				apiKey: 'AIzaSyDtPLoNbRrgrLGQ4SXCcnqB3Rfd6KYl1a8',
 				authDomain: 'chatmodule-app.firebaseapp.com',
@@ -21,15 +19,6 @@ class Fire {
 			});
 		}
 	};
-
-	// checkAuth = () => {
-	// 	firebase.auth().onAuthStateChanged((user) => {
-	// 		if (!user) {
-	// 			// firebase.auth().signInAnonymously();
-	// 			firebase.auth().signInWithEmailAndPassword(user.email, user.password);
-	// 		}
-	// 	});
-	// };
 
 	get = (callback) => {
 		this.db.on('child_added', (snapshot) => callback(this.parse(snapshot)));

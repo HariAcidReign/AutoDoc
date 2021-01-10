@@ -19,7 +19,6 @@ import Fire from '../../Fire';
 
 export default class LoginScreen extends Component {
 	state = {
-		//remove these in production. This is just to not type again and again while in expo
 		name: '',
 		email: '',
 		password: '',
@@ -31,9 +30,10 @@ export default class LoginScreen extends Component {
 		firebase
 			.auth()
 			.signInWithEmailAndPassword(email, password)
-			// .then(() => this.props.navigation.navigate('Home')) // This takes us back to login. Dont want that.
-			.then(() => this.props.navigation.replace('Home')) // After merging, button will navigate to Dash.js.
+			// After merging, button will navigate to Dash.js. If we used navigate instead of
+			// replace then it will take us back to login. Dont want that.
 			//Won't allow login pg to be accessed
+			.then(() => this.props.navigation.replace('Home'))
 			.catch((error) => this.setState({ errorMessage: error.message }));
 	};
 
@@ -105,11 +105,6 @@ export default class LoginScreen extends Component {
 										name="arrow-forward-outline"
 										size={30}
 										color="#FFF"></Ionicons>
-									{/* <Ionicons
-										name="md-arrow-round-forward"
-										size={24}
-										color="#FFF"
-									/> */}
 								</TouchableOpacity>
 							</View>
 						</View>
@@ -123,8 +118,6 @@ export default class LoginScreen extends Component {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		// justifyContent: "center",
-		// alignItems: "center",
 		backgroundColor: '#F4F5F7',
 	},
 	circle: {

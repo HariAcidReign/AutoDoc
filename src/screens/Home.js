@@ -200,9 +200,6 @@ export default class Home extends React.Component {
 		this.getTranscription();
 	};
 
-	// handleQueryChange = (query) => {
-	// 	setQuery(query);
-	// };
 
 	sendsms = async () => {
 		const { result } = await SMS.sendSMSAsync(
