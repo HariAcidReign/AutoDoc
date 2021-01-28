@@ -31,6 +31,8 @@ We are all aware of the poor handwriting that is present in most Doctor Prescrip
 
 Created with 💖 by Hariharan, along with invaluable help from <a href="https://github.com/harishsg99">Harish</a>
 
+- Check out my Linkedin post for this project <a href="https://www.linkedin.com/posts/hariharan-balasubramanian-2a7607187_we-all-know-how-difficult-it-is-to-understand-activity-6750294083803201536-PxaT">here!</a>
+
 
 
 ## Contributing
