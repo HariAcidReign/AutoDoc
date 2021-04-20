@@ -1,7 +1,4 @@
-<p align="center">
-  <a href="https://github.com/HariAcidReign/AutoDoc">
-    <img src="https://user-images.githubusercontent.com/58134096/103359731-6bfefc00-4ade-11eb-918f-6fe8896f9f54.png" alt="Logo" width="300" height="150">
-  </a>
+
 <p align="center">
 <br>
     <a href="" alt="License">
@@ -35,7 +32,7 @@
 <hr>
 <p align="center">
     <a href="https://github.com/HariAcidReign/AutoDoc/">
-        <img style="border-radius:50%" src="https://user-images.githubusercontent.com/58134096/103369129-580fc600-4aef-11eb-9e1e-4a8679bf5719.png" alt="Logo" width="300" height="300">
+        <img style="border-radius:50%" src="https://user-images.githubusercontent.com/58134096/103359731-6bfefc00-4ade-11eb-918f-6fe8896f9f54.png" alt="Logo" width="300" height="300">
     </a>
     <p align="center">
     An awesome open-sourced password manager!
