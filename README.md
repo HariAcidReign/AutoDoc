@@ -2,6 +2,53 @@
   <a href="https://github.com/HariAcidReign/AutoDoc">
     <img src="https://user-images.githubusercontent.com/58134096/103359731-6bfefc00-4ade-11eb-918f-6fe8896f9f54.png" alt="Logo" width="300" height="150">
   </a>
+<p align="center">
+<br>
+    <a href="" alt="License">
+        <img src="https://img.shields.io/github/license/HariAcidReign/AutoDoc"/>
+    </a>
+    <a href="" alt="Maintained">
+        <img src="https://img.shields.io/maintenance/yes/2021"/>
+    </a>
+    <a href="" alt="Code Size">
+        <img src="https://img.shields.io/github/languages/code-size/HariAcidReign/AutoDoc"/>
+    </a>
+<br>
+    <a href="https://github.com/HariAcidReign/AutoDoc/network/members" alt="Forks">
+    <a href="https://github.com/SamDev98/password-manager-py/stargazers" alt="Stars">
+        <img src="https://img.shields.io/github/stars/HariAcidReign/AutoDoc.svg"/>
+    </a>
+    <a href="" alt="Contributors">
+        <img src="https://img.shields.io/github/contributors/HariAcidReign/AutoDoc.svg"/>
+    </a>
+    <a href="https://github.com/SamDev98/password-manager-py/labels/good%20first%20issue" alt="Good First Issues">
+        <img src="https://img.shields.io/github/issues-raw/SamDev98/password-manager-py/good%20first%20issue"/>
+    </a>
+<br>
+    <a href="https://www.linkedin.com/in/hariharan-balasubramanian-2a7607187/" alt="Linkedin">
+        <img src="https://img.shields.io/badge/-Hariharn B-black.svg?style=for-the-badge&logo=linkedin&colorB=555"/>
+    </a>
+      <a href="https://www.linkedin.com/in/harish-s-g-31ba96171/" alt="Linkedin">
+        <img src="https://img.shields.io/badge/-Harish -black.svg?style=for-the-badge&logo=linkedin&colorB=555"/>
+    </a>
+</p>
+<hr>
+<p align="center">
+    <a href="https://github.com/HariAcidReign/AutoDoc/">
+        <img style="border-radius:50%" src="https://user-images.githubusercontent.com/58134096/103369129-580fc600-4aef-11eb-9e1e-4a8679bf5719.png" alt="Logo" width="300" height="300">
+    </a>
+    <p align="center">
+    An awesome open-sourced password manager!
+    <br>
+    <a href="https://github.com/HariAcidReign/AutoDoc/"><strong>Explore the docs »</strong></a>
+    <br>
+    <br>
+    ·
+    <a href="https://github.com/HariAcidReign/AutoDoc/issues/new/choose">Report Bug</a>
+    ·
+    <a href="https://github.com/HariAcidReign/AutoDoc/discussions/new">Request Feature</a>
+  </p>
+</p>
  
 ## 📌 Introduction 
 
