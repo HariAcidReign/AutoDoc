@@ -42,7 +42,6 @@
     ·
     <a href="https://github.com/HariAcidReign/AutoDoc/issues/new/choose">Report Bug</a>
     ·
-    <a href="https://github.com/HariAcidReign/AutoDoc/discussions/new">Request Feature</a>
   </p>
 </p>
  
