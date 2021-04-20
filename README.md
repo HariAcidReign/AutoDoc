@@ -1,9 +1,6 @@
 
 <p align="center">
 <br>
-    <a href="" alt="License">
-        <img src="https://img.shields.io/github/license/HariAcidReign/AutoDoc"/>
-    </a>
     <a href="" alt="Maintained">
         <img src="https://img.shields.io/maintenance/yes/2021"/>
     </a>
