@@ -23,19 +23,18 @@
     </a>
 <br>
     <a href="https://www.linkedin.com/in/hariharan-balasubramanian-2a7607187/" alt="Linkedin">
-        <img src="https://img.shields.io/badge/-Hariharn B-black.svg?style=for-the-badge&logo=linkedin&colorB=555"/>
+        <img src="https://img.shields.io/badge/-Hariharan B-black.svg?style=for-the-badge&logo=linkedin&colorB=555"/>
     </a>
       <a href="https://www.linkedin.com/in/harish-s-g-31ba96171/" alt="Linkedin">
         <img src="https://img.shields.io/badge/-Harish -black.svg?style=for-the-badge&logo=linkedin&colorB=555"/>
     </a>
 </p>
-<hr>
 <p align="center">
     <a href="https://github.com/HariAcidReign/AutoDoc/">
-        <img style="border-radius:50%" src="https://user-images.githubusercontent.com/58134096/103359731-6bfefc00-4ade-11eb-918f-6fe8896f9f54.png" alt="Logo" width="300" height="300">
+        <img style="border-radius:50%" src="https://user-images.githubusercontent.com/58134096/103359731-6bfefc00-4ade-11eb-918f-6fe8896f9f54.png" alt="Logo" width="400" height="200">
     </a>
     <p align="center">
-    An awesome open-sourced password manager!
+    An awesome voice based prescription maker!
     <br>
     <a href="https://github.com/HariAcidReign/AutoDoc/"><strong>Explore the docs »</strong></a>
     <br>
